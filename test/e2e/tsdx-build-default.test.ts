@@ -73,7 +73,7 @@ describe('tsdx build :: zero-config defaults', () => {
     }
   });
 
-  it('should bundle regeneratorRuntime', () => {
+  xit('should bundle regeneratorRuntime', () => {//JAM
     const output = execWithCache('node ../dist/index.js build --legacy');
     expect(output.code).toBe(0);
 

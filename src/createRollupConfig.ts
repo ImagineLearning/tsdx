@@ -1,7 +1,7 @@
 import { safeVariableName, safePackageName, external } from './utils';
 import { paths } from './constants';
-import { RollupOptions } from 'rollup';
-import { terser } from 'rollup-plugin-terser';
+import { InputPluginOption, RollupOptions } from 'rollup';
+import terser from '@rollup/plugin-terser';
 import { DEFAULT_EXTENSIONS as DEFAULT_BABEL_EXTENSIONS } from '@babel/core';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
@@ -9,7 +9,7 @@ import replace from '@rollup/plugin-replace';
 import resolve, {
   DEFAULTS as RESOLVE_DEFAULTS,
 } from '@rollup/plugin-node-resolve';
-import sourceMaps from 'rollup-plugin-sourcemaps';
+import sourceMaps from '@edugis/rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
 import ts from 'typescript';
 
@@ -120,7 +120,7 @@ export async function createRollupConfig(
           }
           return { code, map: null };
         },
-      },
+      } as unknown as InputPluginOption,
       resolve({
         mainFields: [
           'module',
@@ -157,7 +157,7 @@ export async function createRollupConfig(
             map: null,
           };
         },
-      },
+      } as unknown as InputPluginOption,
       typescript({
         typescript: ts,
         tsconfig: opts.tsconfig,
@@ -221,14 +221,14 @@ export async function createRollupConfig(
         ecma: opts.legacy ? 5 : 2020,
         module: isEsm,
         toplevel: opts.format === 'cjs' || isEsm,
-        warnings: true,
+        // warnings: true,
       }),
       /**
        * Ensure there's an empty default export to prevent runtime errors.
        *
        * @see https://www.npmjs.com/package/rollup-plugin-export-default
        */
-       {
+      {
         renderChunk: async (code: string, chunk: any) => {
           if (chunk.exports.includes('default') || !isEsm) {
             return null;
@@ -239,7 +239,7 @@ export async function createRollupConfig(
             map: null,
           };
         },
-      },
+      } as unknown as InputPluginOption,
     ],
   };
 }
