@@ -1,1 +1,3 @@
-export const foo = () => !!'bar';
+export const foo = () => {
+    return 'bar';
+};
