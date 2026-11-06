@@ -37,6 +37,10 @@
     "dist",
     "templates"
   ],
+  "resolutions": {
+    "**/@typescript-eslint/typescript-estree/minimatch": "9.0.7",
+    "styled-components/postcss": "8.5.23"
+  },
   "engines": {
     "node": ">=16"
   },

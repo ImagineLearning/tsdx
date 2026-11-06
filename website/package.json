@@ -26,6 +26,27 @@
     "react-intersection-observer": "^8.26.2",
     "string-strip-html": "^4.5.0"
   },
+  "resolutions": {
+    "**/@ampproject/toolbox-optimizer/terser": "4.8.1",
+    "**/@fullhuman/postcss-purgecss/postcss": "7.0.36",
+    "**/purgecss/postcss": "7.0.36",
+    "**/@mdx-js/loader/loader-utils": "2.0.4",
+    "**/next/loader-utils": "2.0.4",
+    "**/@next/react-dev-overlay/shell-quote": "1.11.0",
+    "**/adjust-sourcemap-loader/loader-utils": "1.4.2",
+    "**/adjust-sourcemap-loader/object-path": "0.11.8",
+    "**/resolve-url-loader/loader-utils": "1.4.2",
+    "**/resolve-url-loader/postcss": "7.0.36",
+    "**/styled-jsx/loader-utils": "1.4.2",
+    "**/core-js-compat/semver": "7.5.2",
+    "**/cross-fetch/node-fetch": "2.6.7",
+    "**/next/browserslist": "4.28.7",
+    "**/next/postcss": "7.0.36",
+    "**/remark-parse/trim": "0.0.3",
+    "**/next/@babel/core": "7.29.6",
+    "**/@mdx-js/mdx/@babel/core": "7.29.6",
+    "**/remark-mdx/@babel/core": "7.29.6"
+  },
   "devDependencies": {
     "@mdx-js/loader": "^1.6.5",
     "babel-plugin-macros": "^2.8.0",
